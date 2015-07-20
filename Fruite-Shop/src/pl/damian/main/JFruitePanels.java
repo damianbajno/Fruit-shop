@@ -43,6 +43,7 @@ public class JFruitePanels{
 	public void setValuesInJLabels(){
 		int index;
 		nameLabel.setText(arrayFruite.get(index));
+		dupa;
 	}
 
 	public JPanel getFruitePanel() {
