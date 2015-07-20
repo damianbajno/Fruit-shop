@@ -12,7 +12,7 @@ import javax.swing.JTextField;
 
 import pl.damian.xml.FruitXML;
 
-public class JFruitePanels{
+public class FruitePanels{
 	JPanel fruitePanel=new JPanel(new GridBagLayout());
 	JLabel nameLabel=new JLabel();
 	JLabel priceLabel=new JLabel();
@@ -25,10 +25,14 @@ public class JFruitePanels{
 	
 	StringBuilder language;
 	ArrayList<Fruite> arrayFruite;
-	Properties properties;
+	Properties fruiteLanguageProperties;
 	
-	public JFruitePanels(StringBuilder language) {
+	static int fruiteNumberInList=0;
+	
+	public FruitePanels(StringBuilder language) {
 		this.language=language;
+		setLayout();
+		setValuesInJLabels();
 	}
 	
 	public void setLayout(){
@@ -41,8 +45,15 @@ public class JFruitePanels{
 	}
 	
 	public void setValuesInJLabels(){
-		int index;
-		nameLabel.setText(arrayFruite.get(index));
+		Fruite fruite = arrayFruite.get(fruiteNumberInList);
+		
+		nameLabel.setText(fruite.getName());
+		priceLabel.setText(String.valueOf(fruite.getPrise()));
+		amountLabel.setText(fruiteLanguageProperties.getProperty("amount"));
+		unitLabel.setText(fruiteLanguageProperties.getProperty("unite"));
+		nameLabel.setText(fruite.getName());
+		
+		fruiteNumberInList++;
 	}
 
 	public JPanel getFruitePanel() {
@@ -52,9 +63,9 @@ public class JFruitePanels{
 	private void loadValues(){
 		
 		InputStream languageResourse = ClassLoader.getSystemResourceAsStream(language.append(".properties").toString());
-		Properties properties=new Properties();
+		fruiteLanguageProperties=new Properties();
 		try {
-			properties.load(languageResourse);
+			fruiteLanguageProperties.load(languageResourse);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
