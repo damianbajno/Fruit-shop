@@ -1,11 +1,13 @@
 package pl.damian.main;
 
 import java.awt.GridBagLayout;
+import java.awt.Image;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Properties;
 
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -49,6 +51,9 @@ public class FruitePanels{
 		
 		nameLabel.setText(fruite.getName());
 		priceLabel.setText(String.valueOf(fruite.getPrise()));
+		ImageIcon icon=new ImageIcon(fruite.getPictureAdress());
+		Image s = icon.getImage().getScaledInstance(150, 150, Image.SCALE_DEFAULT);
+		pictureLabel.setIcon(new ImageIcon(s));
 		amountLabel.setText(fruiteLanguageProperties.getProperty("amount"));
 		unitLabel.setText(fruiteLanguageProperties.getProperty("unite"));
 		nameLabel.setText(fruite.getName());

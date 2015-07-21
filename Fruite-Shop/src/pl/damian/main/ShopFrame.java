@@ -2,7 +2,6 @@ package pl.damian.main;
 
 import java.awt.GridLayout;
 
-import javax.swing.GroupLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -11,16 +10,17 @@ public class ShopFrame extends JFrame {
 	final String frameTitle="Fruite Shop";
 	
 	public ShopFrame() {
-		setLayout(new GridLayout(2, 2));
+		setLayout(new GridLayout(1, 2));
 		setDefaulteSettings();
 		addFruitePanelsToFrame();
 	}
 
 	public void addFruitePanelsToFrame() {
-//		for (int i = 0; i < fruitePanels.getAmountOfFruitePanel(); i++) {
+		for (int i = 0; i < fruitePanels.getAmountOfFruitePanel(); i++) {
 			generateFruitePanels();
-			add(fruitePanels.getFruitePanel());
-//		}
+			JPanel panel=fruitePanels.getFruitePanel();
+			add(panel);
+		}
 	}
 
 	FruitePanels fruitePanels=new FruitePanels("PL");
