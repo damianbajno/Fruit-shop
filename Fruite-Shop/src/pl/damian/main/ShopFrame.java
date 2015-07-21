@@ -8,17 +8,17 @@ public class ShopFrame extends JFrame {
 	
 	public ShopFrame() {
 		setDefaulteSettings();
-		
+		generateFruitePanels();
 	}
 
 	public void generateFruitePanels() {
-		
+		FruitePanels fruitePanels=new FruitePanels("EN");
 	}
 
 	public void setDefaulteSettings() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setTitle(frameTitle);
 		setVisible(true);
-		pack();
+		setSize(400, 400);
 	}
 }

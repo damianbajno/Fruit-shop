@@ -23,15 +23,16 @@ public class FruitePanels{
 	JTextField amountTextFild=new JTextField();
 	JLabel unitLabel=new JLabel();
 	
-	StringBuilder language;
+	StringBuilder language=new StringBuilder();
 	ArrayList<Fruite> arrayFruite;
 	Properties fruiteLanguageProperties;
 	
 	static int fruiteNumberInList=0;
 	
-	public FruitePanels(StringBuilder language) {
-		this.language=language;
+	public FruitePanels(String language) {
+		this.language.append(language);
 		setLayout();
+		loadValues();
 		setValuesInJLabels();
 	}
 	
