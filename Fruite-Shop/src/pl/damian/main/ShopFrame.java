@@ -1,18 +1,33 @@
 package pl.damian.main;
 
+import java.awt.GridLayout;
+
+import javax.swing.GroupLayout;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 public class ShopFrame extends JFrame {
 
 	final String frameTitle="Fruite Shop";
 	
 	public ShopFrame() {
+		setLayout(new GridLayout(2, 2));
 		setDefaulteSettings();
-		generateFruitePanels();
+		addFruitePanelsToFrame();
 	}
 
-	public void generateFruitePanels() {
-		FruitePanels fruitePanels=new FruitePanels("EN");
+	public void addFruitePanelsToFrame() {
+//		for (int i = 0; i < fruitePanels.getAmountOfFruitePanel(); i++) {
+			generateFruitePanels();
+			add(fruitePanels.getFruitePanel());
+//		}
+	}
+
+	FruitePanels fruitePanels=new FruitePanels("PL");
+	
+	public FruitePanels generateFruitePanels() {
+		fruitePanels.setValuesInJLabels();
+		return fruitePanels;
 	}
 
 	public void setDefaulteSettings() {

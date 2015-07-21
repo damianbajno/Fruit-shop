@@ -13,19 +13,19 @@ import javax.swing.JTextField;
 import pl.damian.xml.FruitXML;
 
 public class FruitePanels{
-	JPanel fruitePanel=new JPanel(new GridBagLayout());
-	JLabel nameLabel=new JLabel();
-	JLabel priceLabel=new JLabel();
+	private JPanel fruitePanel=new JPanel(new GridBagLayout());
+	private JLabel nameLabel=new JLabel();
+	private JLabel priceLabel=new JLabel();
 	
-	JLabel pictureLabel=new JLabel();
+	private JLabel pictureLabel=new JLabel();
 	
-	JLabel amountLabel=new JLabel();
-	JTextField amountTextFild=new JTextField();
-	JLabel unitLabel=new JLabel();
+	private JLabel amountLabel=new JLabel();
+	private JTextField amountTextFild=new JTextField(10);
+	private JLabel unitLabel=new JLabel();
 	
-	StringBuilder language=new StringBuilder();
-	ArrayList<Fruite> arrayFruite;
-	Properties fruiteLanguageProperties;
+	private StringBuilder language=new StringBuilder();
+	private ArrayList<Fruite> arrayFruite;
+	private Properties fruiteLanguageProperties;
 	
 	static int fruiteNumberInList=0;
 	
@@ -33,7 +33,6 @@ public class FruitePanels{
 		this.language.append(language);
 		setLayout();
 		loadValues();
-		setValuesInJLabels();
 	}
 	
 	public void setLayout(){
@@ -61,6 +60,11 @@ public class FruitePanels{
 		return fruitePanel;
 	}
 
+	public int getAmountOfFruitePanel()
+	{
+		return arrayFruite.size();
+	}
+	
 	private void loadValues(){
 		
 		InputStream languageResourse = ClassLoader.getSystemResourceAsStream(language.append(".properties").toString());
