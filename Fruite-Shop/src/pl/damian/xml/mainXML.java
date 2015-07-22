@@ -19,9 +19,9 @@ public class mainXML {
 
 		Fruite[] fruites = {
 				new Fruite("pl", "Jabłko", 3,
-						"D:\\skanowanie\\MegaCloud\\Fruite-shop\\resources\\apple.jpg"),
+						"/home/damian/git/Fruite-Shop/Fruite-Shop/resources/apple.jpg"),
 				new Fruite("pl", "Gruszka", 2,
-						"D:\\skanowanie\\MegaCloud\\Fruite-shop\\resources\\pear.jpg") };
+						"/home/damian/git/Fruite-Shop/Fruite-Shop/resources/pear.jpg") };
 		FruitXML fruitXML=new FruitXML();
 		fruitXML.writeFruitesToXMLFile(fruites);
 		

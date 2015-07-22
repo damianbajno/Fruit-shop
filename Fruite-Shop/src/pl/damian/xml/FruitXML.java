@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import pl.damian.main.Fruite;
 
 public class FruitXML {
-	private static String fileDirection = "D:\\skanowanie\\xmlFruiteData.txt";
+	private static String fileDirection = "/home/damian/git/Fruite-Shop/Fruite-Shop/resources/xmlFruiteData.txt";
 	private ArrayList<Fruite> arrayFruite;
 	private static FruitXML fruiteXML;
 	
