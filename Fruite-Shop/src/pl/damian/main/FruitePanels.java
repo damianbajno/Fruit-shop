@@ -4,6 +4,7 @@ import java.awt.GridBagLayout;
 import java.awt.Image;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Properties;
 
@@ -51,14 +52,23 @@ public class FruitePanels{
 		
 		nameLabel.setText(fruite.getName());
 		priceLabel.setText(String.valueOf(fruite.getPrise()));
-		ImageIcon icon=new ImageIcon(fruite.getPictureAdress());
-		Image s = icon.getImage().getScaledInstance(150, 150, Image.SCALE_DEFAULT);
-		pictureLabel.setIcon(new ImageIcon(s));
+
+		ImageIcon fruiteImageIcon = getFruitePictureImageIcon(fruite);
+		pictureLabel.setIcon(fruiteImageIcon);
 		amountLabel.setText(fruiteLanguageProperties.getProperty("amount"));
 		unitLabel.setText(fruiteLanguageProperties.getProperty("unite"));
 		nameLabel.setText(fruite.getName());
 		
 		fruiteNumberInList++;
+	}
+
+	public ImageIcon getFruitePictureImageIcon(Fruite fruite) {
+		URL pictureURL = ClassLoader.getSystemResource(fruite.getPictureAdress());
+		String pathToPictureFile = pictureURL.getPath();
+		ImageIcon icon=new ImageIcon(pathToPictureFile);
+		Image s = icon.getImage().getScaledInstance(150, 150, Image.SCALE_DEFAULT);
+		icon.setImage(s);
+		return icon;
 	}
 
 	public JPanel getFruitePanel() {

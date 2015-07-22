@@ -8,7 +8,7 @@
    <string>Jabłko</string>
   </void>
   <void property="pictureAdress">
-   <string>/home/damian/git/Fruite-Shop/Fruite-Shop/resources/apple.jpg</string>
+   <string>apple.jpg</string>
   </void>
   <void property="prise">
    <long>3</long>
@@ -22,7 +22,7 @@
    <string>Gruszka</string>
   </void>
   <void property="pictureAdress">
-   <string>/home/damian/git/Fruite-Shop/Fruite-Shop/resources/pear.jpg</string>
+   <string>pear.jpg</string>
   </void>
   <void property="prise">
    <long>2</long>

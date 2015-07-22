@@ -57,9 +57,8 @@ public class FruitXML {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
 	}
-
+	
 	public ArrayList<Fruite> getArrayFruite() {
 		return arrayFruite;
 	}
