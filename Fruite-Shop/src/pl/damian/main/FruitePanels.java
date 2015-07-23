@@ -83,6 +83,7 @@ public class FruitePanels{
 	private void loadValues(){
 		
 		InputStream languageResourse = ClassLoader.getSystemResourceAsStream(language.append(".properties").toString());
+		dupa1;
 		fruiteLanguageProperties=new Properties();
 		try {
 			fruiteLanguageProperties.load(languageResourse);
