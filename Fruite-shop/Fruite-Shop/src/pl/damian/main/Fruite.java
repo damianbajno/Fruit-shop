@@ -6,7 +6,8 @@ public class Fruite {
 	private String name;
 	private long prise;
 	private String pictureAdress;
-
+	private String pictureAdress1;
+	
 	public Fruite() {
 		super();
 	}
